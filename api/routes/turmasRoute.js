@@ -7,6 +7,7 @@ const router = Router()
 router.get('/turmas', TurmasController.pegaTodasAsTurmas);
 router.get('/turmas/:id', TurmasController.pegaUmaTurma);
 router.post('/turmas', TurmasController.criaTurma);
+router.post('/turmas/:id/restaura', TurmasController.restauraTurma);
 router.put('/turmas/:id', TurmasController.atualizaTurma);
 router.delete('/turmas/:id', TurmasController.deletaTurma);
 

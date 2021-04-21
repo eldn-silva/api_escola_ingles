@@ -1,9 +1,18 @@
 const database = require('../models');
 
 class PessoaController {
+    static async pegaPessoasAtivas(req, res) { //com o static não precisa criar uma nova instância para clamar o método
+        try {
+            const pessoasAtivas = await database.Pessoas.findAll();
+            return res.status(200).json(pessoasAtivas);
+        } catch (error) {
+            return res.status(500).json(error.message);
+        }
+    }
+
     static async pegaTodasAsPessoas(req, res) { //com o static não precisa criar uma nova instância para clamar o método
         try {
-            const todasAsPessoas = await database.Pessoas.findAll();
+            const todasAsPessoas = await database.Pessoas.scope('todos').findAll();
             return res.status(200).json(todasAsPessoas);
         } catch (error) {
             return res.status(500).json(error.message);

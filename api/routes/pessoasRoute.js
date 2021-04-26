@@ -17,6 +17,7 @@ router.post('/pessoas', PessoaController.criaPessoa);
 router.post('/pessoas/:estudanteId/matricula', PessoaController.criaMatricula);
 router.post('/pessoas/:id/restaura', PessoaController.restauraPessoa);
 router.post('/pessoas/:estudanteId/matricula/:matriculaId/restaura', PessoaController.restauraMatricula);
+router.post('/pessoas/:estudanteId/cancela', PessoaController.cancelaPessoa);
 router.delete('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.deletaMatricula);
 router.delete('/pessoas/:id', PessoaController.deletaPessoa);
 
